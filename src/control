@@ -1,0 +1,19 @@
+Package: com.demoloop.app
+Name: DemoLoop
+Version: 1.3.1
+Architecture: iphoneos-arm
+Description: Turn your legacy iOS device into an authentic Apple Store demo unit!
+ DemoLoop is a tweak that automatically plays a fullscreen, looping video on your device, completely hiding the UI (like a real store display).
+ [!] BETA NOTICE: This tweak is currently in active development. If the folder is not created automatically, please create it manually.
+ [i] Compatibility: iOS 6.x - 8.x
+ [>] How to use:
+ 1. Install the tweak.
+ 2. Place your video file (.mp4 or .mov) into this directory: /Library/Application Support/DemoLoop/
+ (If the folder doesn't exist, create it manually using iFile or Filza).
+ 3. Respring or reboot your device.
+ 4. The video will auto-start and loop endlessly.
+Maintainer: TehFocs
+Author: TehFocs
+Section: Utilities
+Icon: file:///Applications/DemoLoop.app/Icon@2x.png
+Depends: firmware (>= 6.0), com.conradkramer.open

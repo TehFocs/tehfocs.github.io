@@ -1,0 +1,12 @@
+#!/bin/sh
+DIR="/Library/Application Support/DemoLoop"
+mkdir -p "$DIR"
+chown -R mobile:mobile "$DIR" 2>/dev/null
+chmod 777 "$DIR"
+chmod 755 /usr/libexec/demoloop-launcher
+chown root:wheel /Library/LaunchDaemons/com.demoloop.launcher.plist
+chmod 644 /Library/LaunchDaemons/com.demoloop.launcher.plist
+uicache >/dev/null 2>&1
+launchctl unload /Library/LaunchDaemons/com.demoloop.launcher.plist >/dev/null 2>&1
+launchctl load /Library/LaunchDaemons/com.demoloop.launcher.plist
+exit 0

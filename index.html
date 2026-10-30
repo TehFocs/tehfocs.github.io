@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TehFocs Repo</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.5 -apple-system, Helvetica, Arial, sans-serif; max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; }
+  p { margin: 8px 0; }
+  code { background: rgba(127,127,127,.2); padding: 2px 6px; border-radius: 4px; word-break: break-all; }
+  .card { border: 1px solid rgba(127,127,127,.4); border-radius: 10px; padding: 12px 14px; margin: 10px 0; }
+  small { opacity: .7; }
+  img { width: 57px; height: 57px; border-radius: 12px; vertical-align: middle; margin-right: 10px; }
+</style>
+</head>
+<body>
+<h1>TehFocs Repo</h1>
+<p><small>Cydia repository for legacy iOS devices (iOS 6 - 8)</small></p>
+
+<h2>Add this source</h2>
+<p>Cydia &rarr; Sources &rarr; Edit &rarr; Add, then enter:</p>
+<p><code id="u">this page's address</code></p>
+
+<h2>Packages</h2>
+<div class="card">
+  <p><img src="CydiaIcon.png" alt=""><b>DemoLoop</b> 1.3.1</p>
+  <p>Turn your legacy iOS device into an authentic store-style demo unit: a fullscreen, looping video that starts by itself.
+     iOS 6.0 - 8.4.1, 32-bit devices.</p>
+  <p><a href="debs/com.demoloop.app_1.3.1_iphoneos-arm.deb">Download the .deb</a>
+     (for iFile / Filza / <code>dpkg -i</code>)</p>
+</div>
+
+<p><small>Not affiliated with or endorsed by Apple Inc.</small></p>
+<script>
+  try {
+    document.getElementById('u').textContent =
+      location.href.replace(/[?#].*$/, '').replace(/index\.html$/, '');
+  } catch (e) {}
+</script>
+</body>
+</html>
