@@ -1,0 +1,35 @@
+#!/bin/sh
+# DemoLoop autostart: keeps the app running while a video is present.
+
+APP_ID=com.demoloop.app
+D1="/Library/Application Support/DemoLoop"
+D2="/var/mobile/Media/DemoLoop"
+
+has_video() {
+    for d in "$D1" "$D2"; do
+        for f in "$d"/*.[mM][pP]4 "$d"/*.[mM][oO][vV] "$d"/*.[mM]4[vV]; do
+            [ -f "$f" ] && return 0
+        done
+    done
+    return 1
+}
+
+# the service runs as root, so it can always create the video folder
+mkdir -p "$D1" 2>/dev/null
+chmod 755 "$D1" 2>/dev/null
+chown -R mobile "$D1" 2>/dev/null
+
+paused() { [ -e "$D1/pause" ] || [ -e "$D2/pause" ]; }
+
+# wait for SpringBoard (the home screen) to come up after boot
+until ps ax | grep -q '[S]pringBoard'; do sleep 3; done
+sleep 20
+
+while true; do
+    if ! paused && has_video; then
+        if ! ps ax | grep -q '[D]emoLoop.app/DemoLoop'; then
+            /usr/bin/open "$APP_ID"
+        fi
+    fi
+    sleep 5
+done
